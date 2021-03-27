@@ -4,12 +4,12 @@
 #include <windows.h>
 using namespace std;
 
-void gisaFunc(int times, int work){
-    if(times > 0 && work > 0){
+void myFunc(int times, int layers){
+    if(times > 0 && layers > 0){
         int x = 0;
         while(x < times){
             x++;
-            for(int i = 1; i <= work; i++){
+            for(int i = 1; i <= layers; i++){
                 for(int j = 1; j <= i; j++){
                     Sleep(100);
                     cout << "* ";
@@ -17,8 +17,8 @@ void gisaFunc(int times, int work){
                 Sleep(50);
                 cout << endl;
             }
-            for(int i = 1; i <= work - 1; i++){
-                for(int j = i; j <= work - 1; j++){
+            for(int i = 1; i <= layers - 1; i++){
+                for(int j = i; j <= layers - 1; j++){
                     Sleep(100); 
                     cout << "* ";
                 }
@@ -37,11 +37,11 @@ int main(void){
     cin.clear();
     cin.ignore(1000, '\n');
 
-    int work;
+    int layers;
     cout << "How many layers do you want it to be: ";
-    cin >> work;
+    cin >> layers;
     cin.clear();
     cin.ignore(1000, '\n');
     
-    gisaFunc(times, work);
+    myFunc(times, layers);
 }
